@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 {% block contents %}
+{% if user.is_authenticated %}
+    안녕하세요. {{user.nickname}}님<br>
+    <small><small>
+        소속 학교 : {{user.university}}<br>
+        학과 : {{user.major}} 전공
+    </small></small>
+{% endif %}
 {% for blog in blogs.all %}
 <br>
 <div class="container">
